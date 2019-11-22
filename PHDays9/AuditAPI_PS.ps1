@@ -46,9 +46,9 @@ $BaseURI = "https://manage.office.com/api/v1.0/$TenantID/activity/feed"
 $source | ForEach-Object {
     for ($i = 0; $i -lt "6";$i++)
         {
-        $startday = (Get-Date (Get-Date).AddDays(-$i-1) -UFormat %d)
-        $endday = (Get-Date (Get-Date).AddDays(-$i) -UFormat %d)
-        $SubURI = "subscriptions/content?contentType="+$_+"&startTime=2019-05-"+$startday+"&endTime=2019-05-"+$endday
+        $startday = (Get-Date (Get-Date).AddDays(-$i-1) -UFormat %Y-%m-%d)
+        $endday = (Get-Date (Get-Date).AddDays(-$i) -UFormat %Y-%m-%d)
+        $SubURI = "subscriptions/content?contentType="+$_+"&startTime="+$startday+"&endTime="+$endday
         $URI = "$BaseURI/$SubURI"
         $Return = Invoke-RestMethod -Uri $URI -Headers $authHeader -Method Get 
         if ($Return) 

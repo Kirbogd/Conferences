@@ -31,8 +31,6 @@ pretify output
 
     $TenantName = "????.onmicrosoft.com" ## Your tenant name
     
-    $Scope = "https://graph.microsoft.com/.default" 
-    
     $audience = "https://login.microsoftonline.com/$TenantName/oauth2/token"  ##Audience settings for token 
 
     $RedirectURI = "logcheck://auth" ## Provided on the app registration phase. change if you set your own Redirect URI there
@@ -197,8 +195,6 @@ pretify output
 
     $TenantName = "????.onmicrosoft.com" ## Your tenant name
     
-    $Scope = "https://graph.microsoft.com/.default" 
-
     $audience = "https://login.microsoftonline.com/$TenantName/oauth2/token"  ##Audience settings for token 
     
     ## $ClientKey = ## Generate in Certificates and secrets settings of the app principle
